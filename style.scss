@@ -1,0 +1,331 @@
+$color:#f7452e;
+$background:#212529;
+$hover:#fff;
+$backgrody-body: rgb(75, 75, 75);
+
+@mixin title {
+    h2{
+        color: $color;
+        text-align: center;
+    }
+    hr{
+        color: $color;
+        height: 3px;
+    }
+}
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $backgrody-body;
+}
+.nav
+{
+    width: 100%;
+    padding-top: 0;
+    div
+    {
+        background-color:$background;
+        .nav-link{
+            color: $color;
+        }
+        a.nav-link:hover{
+                    color: $hover;
+                }
+        a.nav-link:active
+        {
+            color: $color;
+        }
+        
+        ul{
+            width: 80%;
+            li.form
+            {
+                width: 65%;
+                height: 60px;
+                margin-top: 10px;
+                form{
+                    height: 50px;
+                }
+
+            }
+
+            li.end
+            {
+                width: 25%;
+                margin-left: 5%;
+                margin-top: 13px;
+                a{
+                    color: $color;
+                    text-decoration: none;
+                }
+                a:hover
+                {
+                    color: $hover;
+                }
+            }
+        }
+      }
+}
+        
+        
+                // LIST CSS
+        .list
+        {
+            margin-top: 8em;
+            div
+            {
+                background-color: $backgrody-body;
+                .nav-link{
+                    color: $color;
+                }
+                a.nav-link:hover{
+                            color: $hover;
+                        }
+                a.nav-link:active
+                {
+                    color: $color;
+                }
+                div
+                {
+                    
+                    ul
+                    {
+                        background-color: $backgrody-body;
+                        padding: 0;
+                        margin: 0;
+                        li
+                        {
+                            background-color: #fff;
+                            border: 1px solid $color;
+                            border-radius: 6px;
+                            padding: 0 7px;
+                            margin: 0 10px;
+                            transition: all 1s;
+                        }
+        
+                        li:hover
+                        {
+                            background-color: $color;
+                            border: 1px solid #fff;
+                            border-radius: 6px;
+                            transition: all 1s;
+                           
+                        }
+                       
+                    }
+                    
+                   
+                       
+                    
+                }
+               
+            }
+            
+        }
+
+            // bANNER CSS
+.banner
+{
+    margin-top: 80px;
+}
+
+        // CONTENT 1 CSS
+   .content1
+   {
+       @include title();
+       img
+       {
+            animation-name: shadown;
+            animation-duration: 1.5s;
+            animation-iteration-count:infinite ;
+       }
+       
+   }     
+@keyframes shadown {
+           0%{
+               box-shadow: none;
+           }
+           50%{
+            box-shadow: $color 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+           }
+           100%{
+            box-shadow: none;
+        }
+           
+       }
+        // CONTENT 2 CSS
+
+.content2
+{
+    margin-top: 70px;
+    @include title();
+    .row
+    {
+        .conten2-item
+        {
+            padding-top: 15px;
+            .card{
+                 overflow: hidden; 
+                position: relative;
+                animation: len ease 1s;
+                visibility: visible;
+                .btn-primary{
+                    background-color: $color;
+                    border: 0;
+                }
+                
+            
+                 img{
+                      transition: all 1s;
+                      width: 100%;
+                      height: 300px;
+                      overflow: hidden;
+                }
+                   
+                img:hover
+                {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    .a{
+        color: $color;
+        text-decoration: none;
+        
+    }
+
+    .a:hover{
+        color: $hover;
+    }
+} 
+
+    @keyframes len {
+        from{
+            bottom: -100px;
+        }
+        to{
+            bottom: 0;
+        }
+    }
+        // CONTENT 3 CSS
+    .content3
+    {
+        @include title();
+        .carousel-inner
+        {
+            .carousel-item
+            {
+                height: 503px;
+                overflow: scroll;
+            }
+        }
+        h5,p
+        {
+            color: $color;
+        }
+        
+    }
+
+            // FOOTER CSS
+     .footer{
+         .col-6{
+             padding:0 40px;
+
+         }
+         h6,p,i{
+             color: $color;
+         }
+         .item{
+             display: flex;
+             i{
+                 order: 1;
+                 padding-right: 10px;
+                 padding-top: 5px;
+             }
+             p{
+                 order: 9;
+             }
+         }
+         .contact
+         {
+             margin: auto;
+             display: flex;
+             justify-content: center;
+             i{
+                 padding: 0 10px;
+                 width: auto;
+                 position: relative;
+                 bottom: 0;
+                 transition: font-size 0.5s, bottom 0.5s;
+             }
+             i:hover{
+                 font-size: 30px;
+                 transition: font-size 0.5s, bottom 0.5s;
+                 bottom: 5px;
+             }
+         }
+     }   
+
+
+            // RESPONSIVE
+    
+     @media screen and (max-width: 768px) {
+        .nav{
+            position: absolute;
+            div{
+                div{
+                     .logo
+                    {
+                        padding-left: 30%;
+                    }
+                    ul{
+                        margin: 0;
+                        padding: 0;
+                        width: 100%;
+                        li.form{
+                            width: 98%;
+                            padding-left: 2%;
+                            input
+                            {
+                                width: 100%;
+                                margin-left: 1%;
+                                
+                                
+                            }
+                        }
+
+                        .end{
+                            padding-left: 27%;
+                        }
+                    }
+                }
+            }
+           
+        } 
+         .content1{
+             visibility:hidden;
+             height: 0;;
+         }
+         .content3
+         {
+             @include title();
+             .carousel-inner
+             {
+                 .carousel-item
+                 {
+                     height: 269px;
+                     overflow: scroll;
+                 }
+             }
+        
+             
+         }
+         
+     }
